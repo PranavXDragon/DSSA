@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPU WebGL Limits</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 20px; font-size: 16px; }
+    h1 { color: #fff; }
+    .val { color: #ff0; }
+  </style>
+</head>
+<body>
+  <h1>GPU & WebGL Limits Detector</h1>
+  <div id="output">Detecting...</div>
+
+  <script>
+    function check() {
+      const output = document.getElementById('output');
+      let html = '';
+
+      // Check Native Pixel Ratio
+      html += `Device Pixel Ratio (Native): <span class="val">${window.devicePixelRatio}x</span><br><br>`;
+
+      // Create WebGL Context
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+      if (!gl) {
+        html += '<span style="color:red">WebGL is not supported in this browser.</span>';
+        output.innerHTML = html;
+        return;
+      }
+
+      // Get GPU Info
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      const vendor = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'Unknown';
+      const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Unknown';
+
+      html += `GPU Vendor: <span class="val">${vendor}</span><br>`;
+      html += `GPU Renderer: <span class="val">${renderer}</span><br><br>`;
+
+      // Get Max Limits
+      const maxTexSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+      const maxRenderBufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+      const maxViewportDims = gl.getParameter(gl.MAX_VIEWPORT_DIMS);
+
+      html += `Max Texture Size: <span class="val">${maxTexSize}px</span><br>`;
+      html += `Max RenderBuffer Size: <span class="val">${maxRenderBufferSize}px</span><br>`;
+      html += `Max Viewport Dimensions: <span class="val">${maxViewportDims[0]}x${maxViewportDims[1]}px</span><br><br>`;
+
+      // Calculate Max Theoretical Screen Resolution WebGL can handle
+      html += `<b>Analysis:</b><br>`;
+      html += `If your screen is ${window.screen.width}x${window.screen.height}, at your native ${window.devicePixelRatio}x pixel ratio, the WebGL buffer needs to be <span class="val">${Math.round(window.screen.width * window.devicePixelRatio)}x${Math.round(window.screen.height * window.devicePixelRatio)}</span>.<br>`;
+      
+      const requires = Math.max(window.screen.width * window.devicePixelRatio, window.screen.height * window.devicePixelRatio);
+      if (requires > maxTexSize || requires > maxRenderBufferSize) {
+        html += `<br><span style="color:red">WARNING: Your native resolution EXCEEDS your GPU's WebGL limit (${maxTexSize}px). This is why the app crashed without a limit!</span>`;
+      } else {
+        html += `<br><span style="color:#0f0">SUCCESS: Your native resolution is within limits! The crash might be caused by memory limits or the specific fluid shader hitting a buffer overflow.</span>`;
+      }
+
+      output.innerHTML = html;
+    }
+    check();
+  </script>
+</body>
+</html>

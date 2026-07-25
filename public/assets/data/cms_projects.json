@@ -1,0 +1,794 @@
+[
+  {
+    "id": "65b89831cce4b7a6989f1b2f",
+    "name": "WELCOME TO DSSA",
+    "slug": "dream-portal",
+    "description": "Welcome to the Data Science Student Association.\n\nA student-led technical forum focused on\ninnovation, collaboration,\nleadership, and continuous learning.\n\nExplore technical events,\ncompetitions, workshops,\ncreative projects,\nand experiences that prepare\nfuture technology leaders.",
+    "clientName": "Where Innovation Meets Leadership",
+    "completionDate": "2026",
+    "projectLogo": "",
+    "video": {
+      "id": "65b89814cce4b7a6989f1b28",
+      "thumbnail": "/media/imgi_3_Quest-Winners-Bjc2O-Ta.jpg",
+      "prefix": "media",
+      "filename": "Untitled 2 (Stitched Clip).mp4",
+      "mimeType": "video/mp4",
+      "filesize": 8179808,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-30T06:32:52.205Z",
+      "updatedAt": "2024-01-30T06:32:52.205Z",
+      "url": "/media/imgi_3_Quest-Winners-Bjc2O-Ta.jpg"
+    },
+    "uiColor": "ba7cde",
+    "tags": "Introduction",
+    "priority": 1,
+    "createdAt": "2024-01-30T06:33:21.932Z",
+    "updatedAt": "2024-01-30T06:35:02.326Z"
+  },
+  {
+    "id": "65b8861acce4b7a6989f1ad1",
+    "name": "THE BEGINNING",
+    "slug": "rap-caviar",
+    "description": "Every great journey begins with a vision.\n\nDSSA was established to create\na platform where students\ncould learn beyond the classroom\nthrough collaboration,\ncuriosity, and innovation.\n\nWhat began as an idea\ncontinues to grow into\na vibrant technical forum.",
+    "clientName": "Every Story Has a First Chapter.",
+    "completionDate": "2025",
+    "projectLogo": "",
+    "video": {
+      "id": "65b88606cce4b7a6989f1aca",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/rapcaviar.jpg",
+      "prefix": "media",
+      "filename": "rapcaviar.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 6166609,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-30T05:15:50.033Z",
+      "updatedAt": "2024-01-30T05:15:50.033Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/rapcaviar.mp4"
+    },
+    "uiColor": "e0192c",
+    "tags": "History",
+    "priority": 2,
+    "createdAt": "2024-01-30T05:16:10.675Z",
+    "updatedAt": "2024-01-30T06:38:41.663Z"
+  },
+  {
+    "id": "65b56311cce4b7a6989f165e",
+    "name": "OUR VISION",
+    "slug": "second-sky",
+    "description": "Innovation begins with curiosity.\n\nOur vision is to inspire students\nto explore emerging technologies,\ndevelop leadership,\nstrengthen technical skills,\nand transform ideas\ninto meaningful solutions.\n\nTogether, we learn,\ninnovate, and grow.",
+    "clientName": "Learning • Building • Leading",
+    "completionDate": "2026",
+    "projectLogo": "",
+    "video": {
+      "id": "65b562facce4b7a6989f1657",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Untitled.jpg",
+      "prefix": "media",
+      "filename": "Untitled.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 11485380,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-27T20:09:30.167Z",
+      "updatedAt": "2024-01-27T20:09:30.167Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Untitled.mp4"
+    },
+    "uiColor": "447e08",
+    "tags": "Vision",
+    "priority": 3,
+    "createdAt": "2024-01-27T20:09:53.875Z",
+    "updatedAt": "2024-01-27T20:09:53.875Z"
+  },
+  {
+    "id": "65ac73a45d1db2becbe7c8ed",
+    "name": "BUILDING THE FOUNDATION",
+    "slug": "veiled-visions",
+    "description": "Every strong community\nstarts with a solid foundation.\n\nThe Forum Installation Ceremony\nmarked the beginning of\na new academic journey,\nintroducing student leaders,\nlaunching the Coding Community,\nand inspiring future innovation.\n\nEvery milestone strengthened the community we continue to build today.",
+    "clientName": "Strong Communities Are Built Together.",
+    "completionDate": "12 September 2025",
+    "projectURL": "https://veiledvisions.activetheory.dev/",
+    "projectLogo": "",
+    "video": {
+      "id": "65ac75115d1db2becbe7c988",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/veiled_visions (720p)_1_1.jpg",
+      "prefix": "media",
+      "filename": "veiled_visions (720p)_1_1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 18917658,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-21T01:36:17.334Z",
+      "updatedAt": "2024-01-21T01:36:17.334Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/veiled_visions (720p)_1_1.mp4"
+    },
+    "uiColor": "d6824c",
+    "tags": "Milestone",
+    "priority": 4,
+    "createdAt": "2024-01-21T01:30:12.746Z",
+    "updatedAt": "2024-06-21T23:23:11.508Z"
+  },
+  {
+    "id": "65ac731e5d1db2becbe7c8b5",
+    "name": "OUR JOURNEY",
+    "slug": "sustainable-horizons",
+    "description": "Every event adds\na new chapter to our story.\n\nFrom induction programs\nand technical competitions\nto workshops,\ncommunity activities,\nand student achievements,\nDSSA continues to grow\nthrough every experience.",
+    "clientName": "Every Milestone Tells a Story.",
+    "completionDate": "2025 → 2026",
+    "projectURL": "https://sustainablehorizons.ai/",
+    "projectLogo": "",
+    "video": {
+      "id": "65ac72f15d1db2becbe7c8ae",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/sustainable_1_1.jpg",
+      "prefix": "media",
+      "filename": "sustainable_1_1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 7567027,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-21T01:27:13.505Z",
+      "updatedAt": "2024-01-21T01:27:13.505Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/sustainable_1_1.mp4"
+    },
+    "uiColor": "48bdb5",
+    "tags": "Journey",
+    "priority": 5,
+    "createdAt": "2024-01-21T01:27:58.017Z",
+    "updatedAt": "2024-06-21T23:21:45.821Z"
+  },
+  {
+    "id": "65ac723b5d1db2becbe7c864",
+    "name": "INNOVATION IN ACTION",
+    "slug": "wrapped",
+    "description": "Innovation becomes meaningful\nwhen ideas are put into action.\n\nThrough coding,\ntechnical workshops,\ncreative competitions,\nresearch,\nand collaborative projects,\nstudents transform knowledge\ninto real-world solutions",
+    "clientName": "Turning Ideas into Impact.",
+    "completionDate": "2025 → Present",
+    "projectLogo": "",
+    "video": {
+      "id": "65b8850bcce4b7a6989f1a94",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/beHSLoJcfKgnrGSy.jpg",
+      "prefix": "media",
+      "filename": "beHSLoJcfKgnrGSy.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 2620857,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-30T05:11:39.727Z",
+      "updatedAt": "2024-01-30T05:11:39.727Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/beHSLoJcfKgnrGSy.mp4"
+    },
+    "uiColor": "3c00e3",
+    "tags": "Innovation",
+    "priority": 6,
+    "createdAt": "2024-01-21T01:24:11.332Z",
+    "updatedAt": "2024-01-30T05:12:39.352Z"
+  },
+  {
+    "id": "65a8d242cf624f70f8fff079",
+    "name": "TECH CARNIVAL",
+    "slug": "finding-love",
+    "description": "Learning becomes unforgettable\nwhen it is experienced.\n\nTechnical events,\ncoding competitions,\nseminars,\nworkshops,\ninnovation challenges,\nand student activities\nbring the DSSA community together..",
+    "clientName": "Celebrating Technology Through Experience.",
+    "completionDate": "Academic Year 2025–26",
+    "video": {
+      "id": "65a8d1f0cf624f70f8fff072",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Finding_Love-1.jpg",
+      "prefix": "media",
+      "filename": "Finding_Love-1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 12669591,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T07:23:28.572Z",
+      "updatedAt": "2024-02-04T17:25:49.984Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Finding_Love-1.mp4"
+    },
+    "uiColor": "e180fc",
+    "tags": "Events",
+    "priority": 7,
+    "createdAt": "2024-01-18T07:24:50.800Z",
+    "updatedAt": "2024-01-18T23:49:04.368Z",
+    "projectLogo": ""
+  },
+  {
+    "id": "65a89ffacf624f70f8ffeeeb",
+    "name": "ACHIEVEMENTS",
+    "slug": "soundwaves",
+    "description": "Success is built\nthrough dedication\nand perseverance.\n\nEvery competition,\ncertificate,\naward,\nand recognition\nreflects the passion,\nteamwork,\nand determination\nof the DSSA community.",
+    "clientName": "Every Success Inspires the Next.",
+    "completionDate": "2025–2026",
+    "projectURL": "https://soundwaves.world/",
+    "projectLogo": "",
+    "video": {
+      "id": "65a89ff0cf624f70f8ffeee3",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/soundwaves (720p)-1.jpg",
+      "prefix": "media",
+      "filename": "soundwaves (720p)-1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 9144883,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:50:08.354Z",
+      "updatedAt": "2024-01-18T03:50:08.354Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/soundwaves (720p)-1.mp4"
+    },
+    "image": {
+      "id": "65a89fd0cf624f70f8ffeedb",
+      "prefix": "media",
+      "filename": "64541e77a726efwa3.png",
+      "mimeType": "image/png",
+      "filesize": 722993,
+      "width": 877,
+      "height": 560,
+      "sizes": {
+        "i200px": {
+          "width": 200,
+          "height": 128,
+          "mimeType": "image/png",
+          "filesize": 74876,
+          "filename": "64541e77a726efwa3-200x128.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-200x128.png"
+        },
+        "i400px": {
+          "width": 400,
+          "height": 255,
+          "mimeType": "image/png",
+          "filesize": 278631,
+          "filename": "64541e77a726efwa3-400x255.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-400x255.png"
+        },
+        "i600px": {
+          "width": 600,
+          "height": 383,
+          "mimeType": "image/png",
+          "filesize": 598652,
+          "filename": "64541e77a726efwa3-600x383.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-600x383.png"
+        },
+        "i1024px": {
+          "width": 1024,
+          "height": 654,
+          "mimeType": "image/png",
+          "filesize": 1588384,
+          "filename": "64541e77a726efwa3-1024x654.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-1024x654.png"
+        },
+        "i1600px": {
+          "width": 1600,
+          "height": 1022,
+          "mimeType": "image/png",
+          "filesize": 3357984,
+          "filename": "64541e77a726efwa3-1600x1022.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-1600x1022.png"
+        },
+        "i2000px": {
+          "width": 2000,
+          "height": 1277,
+          "mimeType": "image/png",
+          "filesize": 4811624,
+          "filename": "64541e77a726efwa3-2000x1277.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-2000x1277.png"
+        },
+        "thumbnail": {
+          "width": 400,
+          "height": 300,
+          "mimeType": "image/png",
+          "filesize": 330603,
+          "filename": "64541e77a726efwa3-400x300.png",
+          "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3-400x300.png"
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:49:36.009Z",
+      "updatedAt": "2024-01-18T03:49:36.009Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/64541e77a726efwa3.png"
+    },
+    "uiColor": "a9233b",
+    "tags": "Achievements",
+    "priority": 8,
+    "createdAt": "2024-01-18T03:50:18.830Z",
+    "updatedAt": "2024-01-19T17:04:48.437Z"
+  },
+  {
+    "id": "65a89d3ecf624f70f8ffee1e",
+    "name": "GALLERY",
+    "slug": "new-frontier",
+    "description": "Every photograph\ncaptures a memory.\n\nFrom workshops\nand competitions\nto celebrations,\nstudent activities,\nand unforgettable moments,\nour gallery reflects\nthe journey of DSSA.",
+    "clientName": "Moments That Define Our Journey.",
+    "completionDate": "2025–2026",
+    "projectLogo": "",
+    "video": {
+      "id": "65a89d26cf624f70f8ffee17",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Sundance__New_Frontier_-_Case_Study.jpg",
+      "prefix": "media",
+      "filename": "Sundance__New_Frontier_-_Case_Study.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 26095584,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:38:14.304Z",
+      "updatedAt": "2024-01-18T03:38:14.304Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Sundance__New_Frontier_-_Case_Study.mp4"
+    },
+    "uiColor": "02305d",
+    "tags": "Gallery",
+    "priority": 9,
+    "createdAt": "2024-01-18T03:38:38.466Z",
+    "updatedAt": "2024-01-28T00:07:32.247Z"
+  },
+  {
+    "id": "65a89c59cf624f70f8ffedf9",
+    "name": "FACULTY LEADERSHIP",
+    "slug": "the-field",
+    "description": "Every successful forum\nis guided by inspiring mentors.\n\nThe continuous support\nof our Principal,\nHOD,\nForum In-Charge,\nand faculty members\nempowers students\nto learn,\ninnovate,\nand achieve more.",
+    "clientName": "Guided by Experience.",
+    "completionDate": "Academic Session 2025–26",
+    "projectURL": "https://thefield.wsjbarrons.com/",
+    "projectLogo": "",
+    "video": {
+      "id": "65a89c3bcf624f70f8ffede2",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/the-field-v2_1.jpg",
+      "prefix": "media",
+      "filename": "the-field-v2_1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 6417585,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:34:19.434Z",
+      "updatedAt": "2024-01-18T03:34:19.434Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/the-field-v2_1.mp4"
+    },
+    "uiColor": "531bab",
+    "tags": "Mentorship",
+    "priority": 10,
+    "createdAt": "2024-01-18T03:34:49.649Z",
+    "updatedAt": "2024-01-21T01:30:35.979Z"
+  },
+  {
+    "id": "65a89b02cf624f70f8ffedc2",
+    "name": "CORE COMMITTEE",
+    "slug": "kaninsky-vr",
+    "description": "Behind every successful event\nis a dedicated team.\n\nThe Executive Committee\nworks together\nto organize activities,\nencourage participation,\nand transform ideas\ninto memorable experiences\nfor every student.",
+    "clientName": "The People Behind the Vision.",
+    "completionDate": "Committee 2025–26",
+    "projectLogo": "",
+    "video": {
+      "id": "65a89ad9cf624f70f8ffeda8",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Kandinsky_2000Kbps_720p.jpg",
+      "prefix": "media",
+      "filename": "Kandinsky_2000Kbps_720p.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 7572447,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:28:25.349Z",
+      "updatedAt": "2024-01-18T03:28:25.349Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Kandinsky_2000Kbps_720p.mp4"
+    },
+    "uiColor": "ffa147",
+    "tags": "Leadership",
+    "priority": 11,
+    "createdAt": "2024-01-18T03:29:06.290Z",
+    "updatedAt": "2024-01-31T18:51:15.853Z"
+  },
+  {
+    "id": "65a89a95cf624f70f8ffed98",
+    "name": "OUR IMPACT",
+    "slug": "currents",
+    "description": "Growth is measured\nby the lives we inspire.\n\nEvery workshop,\ntechnical event,\ncompetition,\nand initiative\nstrengthens leadership,\ntechnical knowledge,\nteamwork,\nand confidence\nwithin our student community.",
+    "clientName": "Creating Opportunities. Inspiring Futures.",
+    "completionDate": "2025 → Present",
+    "projectURL": "https://currents.activetheory.net/",
+    "video": {
+      "id": "65a89a71cf624f70f8ffed91",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/currents_2000Kbps_720p.jpg",
+      "prefix": "media",
+      "filename": "currents_2000Kbps_720p.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 5078792,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:26:41.047Z",
+      "updatedAt": "2024-01-18T03:26:41.047Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/currents_2000Kbps_720p.mp4"
+    },
+    "uiColor": "016fd4",
+    "tags": "Impact",
+    "priority": 12,
+    "createdAt": "2024-01-18T03:27:17.745Z",
+    "updatedAt": "2024-01-18T23:49:04.376Z",
+    "projectLogo": ""
+  },
+  {
+    "id": "65a89a0bcf624f70f8ffed7f",
+    "name": "ANNUAL ROADMAP",
+    "slug": "magic-leap",
+    "description": "Every academic year\nbrings new opportunities.\n\nWith workshops,\ncoding activities,\ntechnical competitions,\nindustry interactions,\nand collaborative initiatives,\nDSSA continues\nits journey of innovation\nand continuous learning.",
+    "clientName": "Looking Ahead.",
+    "completionDate": "2026 → 2027",
+    "projectLogo": "",
+    "video": {
+      "id": "65a899f6cf624f70f8ffed78",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/XR_exp (Stitched Clip)_New.jpg",
+      "prefix": "media",
+      "filename": "XR_exp (Stitched Clip)_New.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 14751044,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:24:38.527Z",
+      "updatedAt": "2024-02-04T17:37:30.906Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/XR_exp (Stitched Clip)_New.mp4"
+    },
+    "uiColor": "aef3a9",
+    "tags": "Roadmap",
+    "priority": 13,
+    "createdAt": "2024-01-18T03:24:59.083Z",
+    "updatedAt": "2024-02-04T17:42:28.792Z"
+  },
+  {
+    "id": "65a8987ecf624f70f8ffed59",
+    "name": "THE NEXT CHAPTER",
+    "slug": "breakfastverse",
+    "description": "Every ending\nmarks a new beginning.\n\nAs new students join,\nfuture leaders emerge,\nand fresh ideas take shape,\nDSSA continues its journey\nof learning,\ninnovation,\ncollaboration,\nand excellence.\n\nThe best chapter\nis yet to be written.",
+    "clientName": "The Story Continues...",
+    "completionDate": "Beyond 2026",
+    "projectLogo": "",
+    "video": {
+      "id": "65a8985bcf624f70f8ffed52",
+      "thumbnail": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Ambush_Title_1.jpg",
+      "prefix": "media",
+      "filename": "Ambush_Title_1.mp4",
+      "mimeType": "video/mp4",
+      "filesize": 7785299,
+      "sizes": {
+        "i200px": {
+          "url": null
+        },
+        "i400px": {
+          "url": null
+        },
+        "i600px": {
+          "url": null
+        },
+        "i1024px": {
+          "url": null
+        },
+        "i1600px": {
+          "url": null
+        },
+        "i2000px": {
+          "url": null
+        },
+        "thumbnail": {
+          "url": null
+        },
+        "i1280px": {
+          "url": null
+        }
+      },
+      "createdAt": "2024-01-18T03:17:47.336Z",
+      "updatedAt": "2024-01-18T03:17:47.336Z",
+      "url": "https://storage.googleapis.com/activetheory-v6.appspot.com/media/Ambush_Title_1.mp4"
+    },
+    "uiColor": "feb343",
+    "tags": "Future",
+    "priority": 14,
+    "createdAt": "2024-01-18T03:18:22.377Z",
+    "updatedAt": "2024-01-24T07:56:48.493Z"
+  }
+]

@@ -3255,7 +3255,7 @@ void main() {
     vPos = pos;
     vRandom = random;
 
-    vScale = smoothstep(3.0, 15.0, dist);
+    vScale = 1.0;
     vScale *= 1.0 + (0.5 + sin(time * 3.0 + vRandom.x * 20.0) * 0.5) * 0.3;
     vScale *= mix(0.1, 1.5, random.z);
     vScale *= mix(1.0, 3.0, vRipple);
@@ -3699,7 +3699,7 @@ void main() {
     vec2 uv = vec2(gl_PointCoord.x, 1.0 - gl_PointCoord.y);
     if (length(uv-0.5) > 0.5) discard;
     if (vScale < 0.1) discard;
-    if (length(vWorldPos - vec3(-2.0, 6.0, -2.0)) > 5.0) discard;
+    if (length(vWorldPos - vec3(-2.0, 6.0, -2.0)) > 10.0) discard;
 
     vec3 color = vec3(0.01);
 

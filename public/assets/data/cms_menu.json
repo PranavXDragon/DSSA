@@ -1,0 +1,25 @@
+{
+  "title": "WHAT WOULD YOU LIKE TO EXPLORE?",
+  "items": [
+    {
+      "label": "THE BEGINNING",
+      "tag": "History"
+    },
+    {
+      "label": "OUR JOURNEY",
+      "tag": "Journey"
+    },
+    {
+      "label": "INNOVATION",
+      "tag": "Innovation"
+    },
+    {
+      "label": "LEADERSHIP",
+      "tag": "Leadership"
+    },
+    {
+      "label": "THE FUTURE",
+      "tag": "Future"
+    }
+  ]
+}

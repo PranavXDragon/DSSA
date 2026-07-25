@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
+import Admin from './Admin';
 const ACTIVE_THEORY_CONFIG = {
   cacheKey: '1746999829739', // 原站构建缓存号，用于定位完全一致的 JS bundle。
   appScriptPath: '/assets/js/app.1746999829739.js', // 原站核心 WebGL 与页面动效入口。
@@ -55,6 +55,27 @@ function configureOriginalRuntime(): void {
   window._CACHE_ = ACTIVE_THEORY_CONFIG.cacheKey;
   window._UNSUPPORTED_PAGE_ = ACTIVE_THEORY_CONFIG.unsupportedPage;
   window.UIL_STATIC_PATH = ACTIVE_THEORY_CONFIG.uilStaticPath;
+
+  // Single cleanly installed interceptor
+  if (!(window as any)._fetchIntercepted) {
+    const origFetch = window.fetch;
+    window.fetch = async function(...args) {
+      let url = args[0];
+        if (typeof url === 'string') {
+          if (url.includes('storage.googleapis.com/activetheory-v6.appspot.com/cms/')) {
+            if (url.includes('projects-')) url = '/assets/data/cms_projects.json?v=' + Date.now();
+            else if (url.includes('metadata-')) url = '/assets/data/cms_metadata.json?v=' + Date.now();
+            else if (url.includes('contact-')) url = '/assets/data/cms_contact.json?v=' + Date.now();
+          }
+          if (url.toLowerCase().includes('at_logo.bin')) {
+            url = url + '?v=' + Date.now();
+          }
+        }
+        args[0] = url;
+        return origFetch.apply(this, args);
+    };
+    (window as any)._fetchIntercepted = true;
+  }
 }
 
 function configureAnalytics(): void {
@@ -68,13 +89,48 @@ function configureAnalytics(): void {
 }
 
 export default function App() {
+  const [ready, setReady] = useState(false);
+
   useEffect(() => {
-    configureOriginalRuntime();
-    configureAnalytics();
-    ensurePreloadLink(ACTIVE_THEORY_CONFIG.preloadLinkId, ACTIVE_THEORY_CONFIG.appScriptPath);
-    ensureScript(ACTIVE_THEORY_CONFIG.appScriptId, ACTIVE_THEORY_CONFIG.appScriptPath);
-    ensureScript(ACTIVE_THEORY_CONFIG.analyticsScriptId, ACTIVE_THEORY_CONFIG.analyticsScriptPath);
+    async function init() {
+      configureOriginalRuntime();
+      configureAnalytics();
+
+      Promise.all([
+        fetch('/assets/data/uil.1746999829739.json').then((res) => res.json()).catch(() => ({})),
+        fetch('/assets/data/cms_projects.json').then((res) => res.json()).catch(() => []),
+        fetch('/assets/data/cms_menu.json').then((res) => res.json()).catch(() => null),
+        fetch('/assets/data/cms_settings.json').then((res) => res.json()).catch(() => null)
+      ]).then(([json, projects, menu, settings]) => {
+        
+        if (settings && settings.logoScale !== undefined) {
+           (ACTIVE_THEORY_CONFIG as any).logoScale = Number(settings.logoScale);
+        }
+
+        if (menu && menu.items && json) {
+          json.menu_links = menu.items.length;
+        }
+        (window as any).UIL_DATA = json;
+        (window as any).CMS_PROJECTS = projects;
+        (window as any).CMS_MENU_DATA = menu;
+        (window as any).CMS_SETTINGS = settings;
+
+        const v = '?v=' + Date.now();
+        ensurePreloadLink(ACTIVE_THEORY_CONFIG.preloadLinkId, ACTIVE_THEORY_CONFIG.appScriptPath + v);
+        ensureScript(ACTIVE_THEORY_CONFIG.appScriptId, ACTIVE_THEORY_CONFIG.appScriptPath + v);
+        ensureScript(ACTIVE_THEORY_CONFIG.analyticsScriptId, ACTIVE_THEORY_CONFIG.analyticsScriptPath);
+        setReady(true);
+      }).catch(err => {
+        console.error("Critical fetch error in App.tsx:", err);
+        ensurePreloadLink(ACTIVE_THEORY_CONFIG.preloadLinkId, ACTIVE_THEORY_CONFIG.appScriptPath);
+        ensureScript(ACTIVE_THEORY_CONFIG.appScriptId, ACTIVE_THEORY_CONFIG.appScriptPath);
+        ensureScript(ACTIVE_THEORY_CONFIG.analyticsScriptId, ACTIVE_THEORY_CONFIG.analyticsScriptPath);
+        setReady(true);
+      });
+    }
+    
+    init();
   }, []);
 
-  return null;
+  return ready ? <Admin /> : null;
 }
