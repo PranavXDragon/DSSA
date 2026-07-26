@@ -151,6 +151,18 @@ def generate_cinematic_video(slug, title_upper, default_data, cache_dir_name):
         import shutil
         if os.path.exists(out_public):
             shutil.copy2(out_public, out_dist)
+
+        # Cleanup old videos to keep only the latest one
+        prefix = "-".join(os.path.basename(out_public).split("-")[:-1])
+        import glob
+        for old_vid in glob.glob(f"public/media/{prefix}-*.mp4"):
+            if old_vid != out_public:
+                try: os.remove(old_vid)
+                except: pass
+        for old_vid in glob.glob(f"dist/media/{prefix}-*.mp4"):
+            if old_vid != out_dist:
+                try: os.remove(old_vid)
+                except: pass
             print(f"Video {slug} generated successfully!")
             
             for fpath in ['public/assets/data/cms_projects.json', 'dist/assets/data/cms_projects.json']:
