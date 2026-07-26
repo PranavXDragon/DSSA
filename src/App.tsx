@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Admin from './Admin';
 const ACTIVE_THEORY_CONFIG = {
   cacheKey: '1746999829739', // 原站构建缓存号，用于定位完全一致的 JS bundle。
   appScriptPath: '/assets/js/app.1746999829739.js', // 原站核心 WebGL 与页面动效入口。
@@ -89,7 +88,7 @@ function configureAnalytics(): void {
 }
 
 export default function App() {
-  const [ready, setReady] = useState(false);
+  const [, setReady] = useState(false);
 
   useEffect(() => {
     async function init() {
@@ -132,5 +131,5 @@ export default function App() {
     init();
   }, []);
 
-  return ready ? <Admin /> : null;
+  return null;
 }
