@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Forum Installation",
+    "caption": "Students exploring new technologies at our annual event.",
+    "photo": "A:\\ready\\landing page\\core comiite\\balcony.png",
+    "color": [
+      0,
+      240,
+      255
+    ],
+    "desc": "Official inauguration of the DSSA executive committee, marking the beginning of a new chapter of leadership and innovation."
+  },
+  {
+    "title": "Traditional Day",
+    "caption": "48 hours of intense coding and innovation.",
+    "photo": "A:\\ready\\landing page\\core comiite\\tradional day.png",
+    "color": [
+      255,
+      68,
+      119
+    ],
+    "desc": "Celebrating India's cultural diversity through vibrant traditions, unity, and memorable student participation."
+  },
+  {
+    "title": "Ganpati Making Competition",
+    "caption": "Hands-on experience with industry experts.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 014546.png",
+    "color": [
+      0,
+      255,
+      136
+    ],
+    "desc": "Promoting creativity, sustainability, and cultural values through eco-friendly Ganpati idol making."
+  },
+  {
+    "title": "Volleyball Achievement",
+    "caption": "Building strong connections within the DSSA network.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 013134.png",
+    "color": [
+      255,
+      170,
+      0
+    ],
+    "desc": "Celebrating the team's dedication, teamwork, and outstanding performance in intercollegiate volleyball competitions."
+  },
+  {
+    "title": "Innovator's Quest",
+    "desc": "Igniting innovation through problem-solving, creativity, and collaborative technical challenges.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 014858.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Datathon 2K26",
+    "desc": "Transforming data into insights through competitive analytics and real-world problem solving.",
+    "photo": "A:\\ready\\landing page\\core comiite\\ideathon.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Digital Skill Development Seminar",
+    "desc": "Empowering students with industry-ready digital skills, emerging technologies, and career insights.",
+    "photo": "A:\\ready\\landing page\\core comiite\\gueest.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Guest Lecture",
+    "desc": "Learning from academic and industry experts through insightful sessions on modern technologies and education.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 015044.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "NSS Cleanliness Drive",
+    "desc": "Inspiring social responsibility through community service, environmental awareness, and teamwork.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 015525.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Badminton Tournament",
+    "desc": "Promoting fitness, teamwork, and healthy competition through interdepartmental sports.",
+    "photo": "A:\\ready\\landing page\\core comiite\\ytc.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  }
+]

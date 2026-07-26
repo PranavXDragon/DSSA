@@ -27,3 +27,4 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+\n.photo_cache*\n__pycache__\n

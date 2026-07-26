@@ -1,0 +1,128 @@
+[
+  {
+    "role": "PRESIDENT",
+    "name": "Arshima Nurkhan Pathan ",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "EXECUTIVE DIVISION",
+    "bio": "Leading the executive board, driving technical innovation across student chapters, and managing flagship data science initiatives.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-43-07-354.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-43-07-354.jpg.jpeg"
+  },
+  {
+    "role": "VICE PRESIDENT",
+    "name": "Tejas Kailas Ingole ",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "EXECUTIVE DIVISION",
+    "bio": "Co-leading strategic planning, overseeing cross-departmental operations, and fostering industry partnerships for tech symposiums.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-34-29-847.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-34-29-847.jpg.jpeg"
+  },
+  {
+    "role": "SECRETARY",
+    "name": "Pranav Parate ",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "ADMINISTRATIVE DIVISION",
+    "bio": "Managing official association records, coordinating executive council assemblies, and directing administrative workflows.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-38-11-943.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-38-11-943.jpg.jpeg"
+  },
+  {
+    "role": "TREASURER",
+    "name": "Prajwai Fating ",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "FINANCE DIVISION",
+    "bio": "Overseeing financial allocation, budgeting for technical symposiums, and managing sponsorship funds and accounts.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-41-28-351.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-41-28-351.jpg.jpeg"
+  },
+  {
+    "role": "TECHNICAL HEAD",
+    "name": "Pranav Hemant Navghare ",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "TECHNICAL DIVISION",
+    "bio": "Architecting DSSA core technical platforms, leading hackathons, and directing advanced AI/ML research workshops.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-36-38-060.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-36-38-060.jpg.jpeg"
+  },
+  {
+    "role": "Cultural Head ",
+    "name": "Purva Arvind Bhute",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "CULTURAL DIVISION",
+    "bio": "Curating vibrant cultural festivals, coordinating artistic performances, and fostering an inclusive campus culture",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_22-58-45-585.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_22-58-45-585.jpg.jpeg"
+  },
+  {
+    "role": "SPORTS HEAD",
+    "name": "Pratik Shete",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "SPORTS DIVISION",
+    "bio": "Coordinating competitive sports events, promoting teamwork, and fostering a culture of fitness and sportsmanship.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-41-02-403.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-41-02-403.jpg.jpeg"
+  },
+  {
+    "role": "R&D CELL COORDINATOR",
+    "name": "Garima Rai",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "RESEARCH & DEVELOPMENT DIVISION",
+    "bio": "Advancing research initiatives, mentoring innovative projects, and cultivating a collaborative environment for technological exploration.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-39-16-640.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-39-16-640.jpg.jpeg"
+  },
+  {
+    "role": "IIC CELL COORDINATOR",
+    "name": "Niyatee Pandurang Mohadikar",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "INNOVATION DIVISION",
+    "bio": "Driving innovation programs, nurturing entrepreneurial ideas, and connecting students with the institute's innovation ecosystem.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-35-391.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-35-391.jpg.jpeg"
+  },
+  {
+    "role": "EDC CELL COORDINATOR",
+    "name": "Paramita Gajbhiye",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "ENTREPRENEURSHIP DIVISION",
+    "bio": "Empowering future entrepreneurs through startup initiatives, industry engagement, and entrepreneurship development programs.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-37-23-495.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-37-23-495.jpg.jpeg"
+  },
+  {
+    "role": "SOCIAL MEDIA HEAD",
+    "name": "Pawan Mohture",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "MEDIA & OUTREACH DIVISION",
+    "bio": "Crafting compelling digital campaigns, managing social media platforms, and amplifying DSSA's presence through engaging content.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-56-567.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-56-567.jpg.jpeg"
+  },
+  {
+    "role": "MAGAZINE HEAD",
+    "name": "Sahil Usare",
+    "dept": "B.Tech, Data Science · Second Year",
+    "div": "PUBLICATIONS DIVISION",
+    "bio": "Managing campus infrastructure, security protocols, and hardware/network setups for large-scale hackathons.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-39-36-082.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-39-36-082.jpg.jpeg"
+  },
+  {
+    "role": "GIRLS REPRESENTATIVE",
+    "name": "Isha Anil Urkude",
+    "dept": "B.Tech, Data Science · Third Year",
+    "div": "STUDENT WELFARE DIVISION",
+    "bio": "Advocating student welfare, promoting inclusivity, and empowering women through leadership and community engagement",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-38-41-474.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-38-41-474.jpg.jpeg"
+  },
+  {
+    "role": "EXECUTIVE MEMBER",
+    "name": "Krish Urkude",
+    "dept": "B.Tech, Data Science · Final Year",
+    "div": "EXECUTIVE BOARD",
+    "bio": "Supporting strategic initiatives, coordinating cross-functional operations, and ensuring the successful execution of chapter activities.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-07-743.jpg.jpeg",
+    "url": "A:\\ready\\landing page\\core comiite\\Picsart_26-07-26_21-35-07-743.jpg.jpeg"
+  }
+]

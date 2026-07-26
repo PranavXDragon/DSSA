@@ -13,7 +13,10 @@ function saveUilPlugin() {
           res.setHeader('Pragma', 'no-cache');
           res.setHeader('Expires', '0');
         }
-        console.log(`REQ: ${req.url}`); next();
+        if (req.url !== '/api/save-uil' && req.url !== '/api/log-url') {
+           console.log(`REQ: ${req.url}`); 
+        }
+        next();
       });
       server.middlewares.use(async (req, res, next) => {
         if (req.url === '/api/save-uil' && req.method === 'POST') {
@@ -49,6 +52,49 @@ function saveUilPlugin() {
                   console.log("Auto-convert logo failed", e);
                 }
               }
+
+              // Helper to save json and run python if changed
+              const processSection = (payloadData, fileName, pythonScript) => {
+                if (!payloadData) return;
+                const pubPath = path.resolve(__dirname, `public/assets/data/${fileName}`);
+                const distPath = path.resolve(__dirname, `dist/assets/data/${fileName}`);
+                
+                let existingStr = "";
+                if (fs.existsSync(pubPath)) {
+                  existingStr = fs.readFileSync(pubPath, 'utf8');
+                }
+                const newStr = JSON.stringify(payloadData, null, 2);
+                
+                if (existingStr !== newStr) {
+                   fs.writeFileSync(pubPath, newStr);
+                   if (fs.existsSync(path.resolve(__dirname, 'dist/assets/data'))) {
+                       fs.writeFileSync(distPath, newStr);
+                   }
+                   if (pythonScript) {
+                     try {
+                       const execSync = require('child_process').execSync;
+                       console.log(`Re-generating video via ${pythonScript}...`);
+                       execSync(`python scripts/${pythonScript}`, { cwd: __dirname });
+                     } catch(e) {
+                       console.log(`Script ${pythonScript} failed:`, e);
+                     }
+                   }
+                }
+              };
+
+              // Team & Toppers
+
+              // New Card Sections
+              if (payload.cardsData) {
+                  processSection(payload.cardsData.chapter, 'next_chapter.json', 'generate_next_chapter_video.py');
+
+                  processSection(payload.cardsData.welcome, 'welcome_dssa.json', 'generate_welcome_video.py');
+                  processSection(payload.cardsData.beginning, 'beginning_events.json', 'generate_beginning_video.py');
+                  processSection(payload.cardsData.vision, 'our-vision_data.json', 'generate_vision_video.py');
+                  processSection(payload.cardsData.foundation, 'building-the-foundation_data.json', 'generate_foundation_video.py');
+                  processSection(payload.cardsData.journey, 'our-journey_data.json');
+              }
+
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({ success: true }));
             } catch (err) {
@@ -66,7 +112,7 @@ function saveUilPlugin() {
             res.end('ok');
           });
         } else {
-          console.log(`REQ: ${req.url}`); next();
+           next();
         }
       });
     }

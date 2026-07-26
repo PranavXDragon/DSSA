@@ -1,0 +1,35 @@
+[
+  {
+    "month": "JUL",
+    "year": "2026",
+    "title": "Forum Installation",
+    "desc": "Launching the DSSA Executive Committee and unveiling the 2026–27 vision.",
+    "color": [
+      0,
+      240,
+      255
+    ]
+  },
+  {
+    "month": "AUG",
+    "year": "2026",
+    "title": "AI Foundations Bootcamp",
+    "desc": "Kickstart your AI journey with practical workshops and real-world projects.",
+    "color": [
+      255,
+      68,
+      119
+    ]
+  },
+  {
+    "month": "TBA",
+    "year": "2026",
+    "title": "Coming Soon",
+    "desc": "New events and opportunities will be announced soon. Keep following DSSA for updates.",
+    "color": [
+      0,
+      255,
+      136
+    ]
+  }
+]

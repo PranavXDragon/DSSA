@@ -1,0 +1,62 @@
+[
+  {
+    "role": " PRINCIPAL",
+    "name": "Dr. V. G. Arajpure",
+    "dept": "Ph.D. · 33+ Yrs Experience",
+    "div": "INSTITUTE LEADERSHIP",
+    "bio": "Guiding institutional excellence through visionary leadership, fostering research-driven innovation, and empowering students to shape the future of technology.",
+    "photo": "A:\\ready\\landing page\\core comiite\\principal.png",
+    "color": [
+      255,
+      170,
+      0
+    ],
+    "url": "A:\\ready\\landing page\\core comiite\\principal.png"
+  },
+  {
+    "role": "VICE PRINCIPAL",
+    "name": "Dr. V. Parhate",
+    "dept": "Ph.D. · 25+ Yrs Experience",
+    "div": "ACADEMIC LEADERSHIP",
+    "bio": "Strengthening academic excellence, mentoring faculty development, and fostering an innovative learning environment through visionary academic leadership.",
+    "photo": "A:\\ready\\landing page\\core comiite\\vice principle.png",
+    "url": "A:\\ready\\landing page\\core comiite\\vice principle.png"
+  },
+  {
+    "role": "DEAN – ACADEMICS",
+    "name": "Dr. Rasika Chafle",
+    "dept": "Ph.D. · 20+ Yrs Experience",
+    "div": "ACADEMIC ADMINISTRATION",
+    "bio": "Leading academic excellence, advancing outcome-based education, and fostering innovation through quality teaching, research, and student-centric learning.",
+    "photo": "A:\\ready\\landing page\\core comiite\\dean.png",
+    "url": "A:\\ready\\landing page\\core comiite\\dean.png"
+  },
+  {
+    "role": "HEAD OF DEPARTMENT (D.S.)",
+    "name": "Prof. Pradip Balbudhe",
+    "dept": "M.Tech. · Ph.D. · 13.5 Yrs Experience",
+    "div": "DEPARTMENT LEADERSHIP",
+    "bio": "Leading cutting-edge Data Science education, fostering industry partnerships, and empowering the next generation of innovators through research-driven learning.",
+    "photo": "A:\\ready\\landing page\\core comiite\\hod1.png",
+    "color": [
+      0,
+      240,
+      255
+    ],
+    "url": "A:\\ready\\landing page\\core comiite\\hod1.png"
+  },
+  {
+    "role": "FORUM IN-CHARGE & MENTOR",
+    "name": "Prof. Arpit Topre",
+    "dept": "M.Tech. · Ph.D. Scholar · Sr. Assistant Professor",
+    "div": "DSSA CHIEF MENTOR",
+    "bio": "Directing DSSA technical symposiums, mentoring student hackathon teams, and overseeing association activities and milestones.",
+    "photo": "A:\\ready\\landing page\\core comiite\\DSSA in commander.jpeg",
+    "color": [
+      0,
+      255,
+      136
+    ],
+    "url": "A:\\ready\\landing page\\core comiite\\DSSA in commander.jpeg"
+  }
+]

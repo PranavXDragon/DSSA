@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Innovator's Quest",
+    "desc": "Transforming bold ideas into innovative solutions through creativity, teamwork, and problem-solving.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 014858.png",
+    "color": [
+      0,
+      240,
+      255
+    ]
+  },
+  {
+    "title": "Digital Skill Development Seminar",
+    "desc": "Enhancing digital expertise through industry-focused learning and practical technology sessions.",
+    "photo": "A:\\ready\\landing page\\core comiite\\gueest.png",
+    "color": [
+      255,
+      68,
+      119
+    ]
+  },
+  {
+    "title": "Guest Lecture – Bloom's Taxonomy",
+    "desc": "Exploring modern teaching methodologies and learning strategies through expert guidance.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 015044.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Debugging Competition",
+    "desc": "Sharpening coding accuracy and analytical thinking through real-time debugging challenges.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 022154.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  },
+  {
+    "title": "Technical Workshops",
+    "desc": "Building practical skills through hands-on workshops in emerging technologies and innovation.",
+    "photo": "A:\\ready\\landing page\\core comiite\\Screenshot 2026-07-27 022446.png",
+    "color": [
+      0,
+      200,
+      255
+    ]
+  }
+]

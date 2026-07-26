@@ -97,10 +97,10 @@ export default function App() {
       configureAnalytics();
 
       Promise.all([
-        fetch('/assets/data/uil.1746999829739.json').then((res) => res.json()).catch(() => ({})),
-        fetch('/assets/data/cms_projects.json').then((res) => res.json()).catch(() => []),
-        fetch('/assets/data/cms_menu.json').then((res) => res.json()).catch(() => null),
-        fetch('/assets/data/cms_settings.json').then((res) => res.json()).catch(() => null)
+        fetch('/assets/data/uil.1746999829739.json?v=' + Date.now()).then((res) => res.json()).catch(() => ({})),
+        fetch('/assets/data/cms_projects.json?v=' + Date.now()).then((res) => res.json()).catch(() => []),
+        fetch('/assets/data/cms_menu.json?v=' + Date.now()).then((res) => res.json()).catch(() => null),
+        fetch('/assets/data/cms_settings.json?v=' + Date.now()).then((res) => res.json()).catch(() => null)
       ]).then(([json, projects, menu, settings]) => {
         
         if (settings && settings.logoScale !== undefined) {

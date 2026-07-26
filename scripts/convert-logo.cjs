@@ -45,6 +45,54 @@ try {
 }
 console.log(`Using scale multiplier: ${scale}`);
 
+
+let minX = Infinity, maxX = -Infinity;
+let minY = Infinity, maxY = -Infinity;
+
+// Find bounds for planar UV mapping
+model.vertices.forEach(v => {
+  if (v.x < minX) minX = v.x;
+  if (v.x > maxX) maxX = v.x;
+  if (v.y < minY) minY = v.y;
+  if (v.y > maxY) maxY = v.y;
+});
+
+// Compute smooth vertex normals
+const computedNormals = new Float32Array(model.vertices.length * 3);
+model.faces.forEach(face => {
+  for (let i = 1; i < face.vertices.length - 1; i++) {
+    const v0 = model.vertices[face.vertices[0].vertexIndex - 1];
+    const v1 = model.vertices[face.vertices[i].vertexIndex - 1];
+    const v2 = model.vertices[face.vertices[i+1].vertexIndex - 1];
+    if(!v0 || !v1 || !v2) continue;
+    
+    // Cross product
+    const ax = v1.x - v0.x, ay = v1.y - v0.y, az = v1.z - v0.z;
+    const bx = v2.x - v0.x, by = v2.y - v0.y, bz = v2.z - v0.z;
+    const nx = ay * bz - az * by;
+    const ny = az * bx - ax * bz;
+    const nz = ax * by - ay * bx;
+    
+    const i0 = (face.vertices[0].vertexIndex - 1) * 3;
+    const i1 = (face.vertices[i].vertexIndex - 1) * 3;
+    const i2 = (face.vertices[i+1].vertexIndex - 1) * 3;
+    
+    computedNormals[i0] += nx; computedNormals[i0+1] += ny; computedNormals[i0+2] += nz;
+    computedNormals[i1] += nx; computedNormals[i1+1] += ny; computedNormals[i1+2] += nz;
+    computedNormals[i2] += nx; computedNormals[i2+1] += ny; computedNormals[i2+2] += nz;
+  }
+});
+
+// Normalize the computed normals
+for (let i = 0; i < computedNormals.length; i += 3) {
+  const len = Math.sqrt(computedNormals[i]**2 + computedNormals[i+1]**2 + computedNormals[i+2]**2);
+  if (len > 0) {
+    computedNormals[i] /= len;
+    computedNormals[i+1] /= len;
+    computedNormals[i+2] /= len;
+  }
+}
+
 // Shuffle faces to get uniform distribution when we truncate
 for (let i = model.faces.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
@@ -53,26 +101,31 @@ for (let i = model.faces.length - 1; i > 0; i--) {
 
 for (let f = 0; f < model.faces.length; f++) {
   const face = model.faces[f];
-  if (vertexCount + (face.vertices.length - 2) * 3 > 65500) break; // Keep it under 65536
+  if (vertexCount + (face.vertices.length - 2) * 3 > 65500) break;
   
-  // Triangulate polygons (assuming convex)
   for (let i = 1; i < face.vertices.length - 1; i++) {
     const tri = [face.vertices[0], face.vertices[i], face.vertices[i+1]];
     
     tri.forEach(v => {
-      // Key uniquely identifies the pos/normal/uv combination
-      const key = `${v.vertexIndex}/${v.textureCoordsIndex}/${v.vertexNormalIndex}`;
+      const vIdx = v.vertexIndex - 1;
+      const key = `${vIdx}`;
       
       if (vertexMap.has(key)) {
         indices.push(vertexMap.get(key));
       } else {
-        const p = model.vertices[v.vertexIndex - 1] || {x:0, y:0, z:0};
-        const n = model.vertexNormals[v.vertexNormalIndex - 1] || {x:0, y:1, z:0};
-        const uv = model.textureCoords[v.textureCoordsIndex - 1] || {u:0, v:0};
+        const p = model.vertices[vIdx] || {x:0, y:0, z:0};
+        
+        let nx = computedNormals[vIdx * 3];
+        let ny = computedNormals[vIdx * 3 + 1];
+        let nz = computedNormals[vIdx * 3 + 2];
+        if (isNaN(nx) || isNaN(ny) || isNaN(nz)) { nx = 0; ny = 1; nz = 0; }
+        
+        let u = (p.x - minX) / (maxX - minX || 1);
+        let v_coord = (p.y - minY) / (maxY - minY || 1);
         
         positions.push(p.x * scale, p.y * scale, p.z * scale);
-        normals.push(n.x, n.y, n.z);
-        uvs.push(uv.u, uv.v);
+        normals.push(nx, ny, nz);
+        uvs.push(u, v_coord);
         
         const idx = vertexCount++;
         vertexMap.set(key, idx);
@@ -81,7 +134,6 @@ for (let f = 0; f < model.faces.length; f++) {
     });
   }
 }
-
 draco3d.createEncoderModule({}).then(function(module) {
   const encoder = new module.Encoder();
   const meshBuilder = new module.MeshBuilder();
@@ -159,7 +211,18 @@ draco3d.createEncoderModule({}).then(function(module) {
   const particleFile = path.join(__dirname, '../public/assets/geometry/particles/at_logo.bin');
   fs.writeFileSync(particleFile, new Buffer.from(outputBufferParticles));
   
+  const dsParticleFile = path.join(__dirname, '../public/assets/geometry/particles/ds_particles.bin');
+  fs.writeFileSync(dsParticleFile, new Buffer.from(outputBufferParticles));
+
+  try {
+    fs.mkdirSync(path.join(__dirname, '../dist/assets/geometry/logo'), { recursive: true });
+    fs.mkdirSync(path.join(__dirname, '../dist/assets/geometry/particles'), { recursive: true });
+    fs.copyFileSync(outputFile, path.join(__dirname, '../dist/assets/geometry/logo/AT_logo.bin'));
+    fs.copyFileSync(particleFile, path.join(__dirname, '../dist/assets/geometry/particles/at_logo.bin'));
+    fs.copyFileSync(dsParticleFile, path.join(__dirname, '../dist/assets/geometry/particles/ds_particles.bin'));
+  } catch(e) {}
+
   console.log(`✅ Successfully converted my_logo.obj!`);
   console.log(`Saved logo to: ${outputFile}`);
-  console.log(`Saved particles to: ${particleFile}`);
+  console.log(`Saved particles to: ${particleFile} & ds_particles.bin`);
 });

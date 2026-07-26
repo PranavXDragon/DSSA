@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "update:team": "python scripts/generate_backbone_videos.py && python scripts/generate_roster_video.py && python scripts/generate_faculty_video.py && python scripts/generate_achievements_video.py",
+    "update:all": "npm run update:team"
   },
   "dependencies": {
     "react": "^19.1.0",
