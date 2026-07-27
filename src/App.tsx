@@ -68,7 +68,9 @@ function configureOriginalRuntime(): void {
         });
       };
       window.addEventListener('click', resumeAll, { capture: true });
-      window.addEventListener('touchstart', resumeAll, { capture: true });\n      window.addEventListener('touchend', resumeAll, { capture: true });\n      window.addEventListener('pointerdown', resumeAll, { capture: true });
+      window.addEventListener('touchstart', resumeAll, { capture: true });
+      window.addEventListener('touchend', resumeAll, { capture: true });
+      window.addEventListener('pointerdown', resumeAll, { capture: true });
     }
     (window as any)._audioPatched = true;
   }
