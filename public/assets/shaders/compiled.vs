@@ -3701,7 +3701,7 @@ void main() {
     if (vScale < 0.1) discard;
     if (length(vWorldPos - vec3(-2.0, 6.0, -2.0)) > 10.0) discard;
 
-    vec3 color = vec3(0.01);
+    vec3 color = vec3(0.35);
 
     vec2 screenuv = gl_FragCoord.xy / resolution;
 
@@ -3717,8 +3717,8 @@ void main() {
     vec2 matcapUV = rotateUV(uv, sin(time * 1.0 + vRandom.z * 20.0) * 0.5 + 1.0);
     vec3 matcap = texture2D(tMap, matcapUV).rgb * 2.0;
     // matcap = mix(matcap, vec3(1.0), 0.5 + sin(time + vRandom.x * 20.0) * 0.4);
-    color = blendSoftLight(color, matcap, 0.2);
-    color = blendOverlay(color, matcap, 0.1);
+    color = blendSoftLight(color, matcap, 0.8);
+    color = blendOverlay(color, matcap, 0.4);
     color = rgb2hsv(color);
     color.x += noise * 0.05;
     color = hsv2rgb(color);
