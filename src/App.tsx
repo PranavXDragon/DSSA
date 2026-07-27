@@ -49,6 +49,29 @@ function ensureScript(id: string, src: string, async = true): void {
 }
 
 function configureOriginalRuntime(): void {
+  if (!(window as any)._audioPatched) {
+    const OrigAudioContext = window.AudioContext || (window as any).webkitAudioContext;
+    if (OrigAudioContext) {
+      const contexts: any[] = [];
+      function PatchedAudioContext(this: any, ...args: any[]) {
+        const ctx = new (OrigAudioContext as any)(...args);
+        contexts.push(ctx);
+        return ctx;
+      }
+      PatchedAudioContext.prototype = OrigAudioContext.prototype;
+      Object.setPrototypeOf(PatchedAudioContext, OrigAudioContext);
+      window.AudioContext = PatchedAudioContext as any;
+      if ((window as any).webkitAudioContext) (window as any).webkitAudioContext = PatchedAudioContext;
+      const resumeAll = () => {
+        contexts.forEach(ctx => {
+          if (ctx.state === 'suspended') ctx.resume();
+        });
+      };
+      window.addEventListener('click', resumeAll, { capture: true });
+      window.addEventListener('touchstart', resumeAll, { capture: true });\n      window.addEventListener('touchend', resumeAll, { capture: true });\n      window.addEventListener('pointerdown', resumeAll, { capture: true });
+    }
+    (window as any)._audioPatched = true;
+  }
   window._ENV_ = 'production';
   window._CMS_ = '%CMS%';
   window._CACHE_ = ACTIVE_THEORY_CONFIG.cacheKey;
