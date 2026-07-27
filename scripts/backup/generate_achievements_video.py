@@ -236,7 +236,6 @@ def generate_achievements_video():
                         fl['image'] = f'/media/achievements-toppers-v2.jpg?v={ts}'
                         fl['video']['filename'] = f'achievements-toppers-{ts}.mp4'
                         fl['video']['filesize'] = os.path.getsize(out_public)
-                        fl['description'] = ""
                     with open(fpath, 'w', encoding='utf-8') as f:
                         json.dump(pdata, f, indent=2)
     except Exception as e:

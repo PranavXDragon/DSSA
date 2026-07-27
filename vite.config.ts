@@ -95,8 +95,8 @@ function saveUilPlugin() {
                   processSection(payload.cardsData.welcome, 'welcome_dssa.json', 'generate_welcome_video.py');
                   processSection(payload.cardsData.beginning, 'beginning_events.json', 'generate_beginning_video.py');
                   processSection(payload.cardsData.vision, 'our-vision_data.json', 'generate_vision_video.py');
-                  processSection(payload.cardsData.foundation, 'building-the-foundation_data.json', 'generate_foundation_video.py');
-                  processSection(payload.cardsData.journey, 'our-journey_data.json');
+                  processSection(payload.cardsData.journey, 'our-journey_data.json', 'generate_journey_video.py');
+                  processSection(payload.cardsData.innovation, 'innovation-in-action_data.json', 'backup/generate_innovation_video.py');
               }
 
               res.setHeader('Content-Type', 'application/json');

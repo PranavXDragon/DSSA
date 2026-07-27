@@ -237,7 +237,7 @@ def generate_faculty_video():
                 fl = next((p for p in pdata if p.get('slug') == 'faculty-leadership'), None)
                 if fl and 'video' in fl:
                     fl['video']['url'] = f'/media/faculty-leadership-{ts}.mp4?v={ts}'
-                    fl['video']['thumbnail'] = '/media/faculty-leadership-v3.jpg?v=3'
+                    fl['video']['thumbnail'] = f'/media/faculty-leadership-v3.jpg?v={ts}'
                     fl['video']['filename'] = f'faculty-leadership-{ts}.mp4'
                     fl['video']['filesize'] = os.path.getsize(out_public)
                 with open(fpath, 'w', encoding='utf-8') as f:

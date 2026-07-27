@@ -454,7 +454,7 @@ export default function Admin() {
             {activeTab === 'faculty' && (
               <div>
                 <div style={{ marginBottom: '12px', fontSize: '12px', color: '#aaa', lineHeight: '1.4' }}>
-                  Edit names, roles, departments, and photo URLs or local paths (like <code>/assets/team/photo.jpg</code>). Clicking <b>Save Changes</b> above will automatically regenerate the 3D team videos!
+                  Edit names, roles, departments, and photo URLs or local paths (like <code>/assets/team/photo.jpg</code>). Clicking <b>Save Changes</b> above will automatically regenerate the faculty videos!
                 </div>
 
                 {facultyData.map((member: any, idx: number) => (
