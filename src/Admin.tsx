@@ -8,7 +8,7 @@ export default function Admin() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState<'text' | 'media' | 'projects' | 'menu' | 'settings' | 'team' | 'cards'>('text');
+  const [activeTab, setActiveTab] = useState<'text' | 'media' | 'projects' | 'menu' | 'settings' | 'team' | 'faculty' | 'cards'>('text');
   const [backboneData, setBackboneData] = useState<any[]>([]);
   const [facultyData, setFacultyData] = useState<any[]>([]);
   const [cardsData, setCardsData] = useState<Record<string, any[]>>({ gallery: [], roadmap: [], chapter: [], quest: [], welcome: [], beginning: [], vision: [], foundation: [], journey: [] });
@@ -291,6 +291,18 @@ export default function Admin() {
             </button>
 
             <button 
+              onClick={() => setActiveTab('team')}
+              style={{ flex: 1, padding: '10px 5px', background: activeTab === 'team' ? '#333' : 'transparent', color: 'white', border: 'none', cursor: 'pointer', fontSize: '13px' }}
+            >
+              Team
+            </button>
+            <button 
+              onClick={() => setActiveTab('faculty')}
+              style={{ flex: 1, padding: '10px 5px', background: activeTab === 'faculty' ? '#333' : 'transparent', color: 'white', border: 'none', cursor: 'pointer', fontSize: '13px' }}
+            >
+              Faculty
+            </button>
+            <button 
               onClick={() => setActiveTab('cards')}
               style={{ flex: 1, padding: '10px 5px', background: activeTab === 'cards' ? '#333' : 'transparent', color: '#00f0ff', border: 'none', cursor: 'pointer', fontSize: '13px', fontWeight: 'bold' }}
             >
@@ -439,6 +451,129 @@ export default function Admin() {
                 </button>
               </div>
             )}
+            {activeTab === 'faculty' && (
+              <div>
+                <div style={{ marginBottom: '12px', fontSize: '12px', color: '#aaa', lineHeight: '1.4' }}>
+                  Edit names, roles, departments, and photo URLs or local paths (like <code>/assets/team/photo.jpg</code>). Clicking <b>Save Changes</b> above will automatically regenerate the 3D team videos!
+                </div>
+
+                {facultyData.map((member: any, idx: number) => (
+                  <div key={idx} style={{ background: '#1c1c24', border: '1px solid #333', borderRadius: '8px', padding: '12px', marginBottom: '12px', position: 'relative' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                      <span style={{ color: '#00f0ff', fontWeight: 'bold', fontSize: '14px' }}>#{idx + 1} {member.name || 'New Member'}</span>
+                      <button
+                        onClick={() => {
+                          setFacultyData(prev => prev.filter((_, i) => i !== idx));
+                        }}
+                        style={{ background: '#ef4444', color: 'white', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px' }}
+                      >
+                        Remove
+                      </button>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '8px' }}>
+                      <div>
+                        <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Name</label>
+                        <input
+                          type="text"
+                          value={member.name || ''}
+                          onChange={e => {
+                            const val = e.target.value;
+                            setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, name: val } : m));
+                          }}
+                          style={{ width: '100%', background: '#111', border: '1px solid #444', color: 'white', padding: '6px', borderRadius: '4px', fontSize: '13px' }}
+                        />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Role / Title</label>
+                        <input
+                          type="text"
+                          value={member.role || ''}
+                          onChange={e => {
+                            const val = e.target.value;
+                            setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, role: val } : m));
+                          }}
+                          style={{ width: '100%', background: '#111', border: '1px solid #444', color: 'white', padding: '6px', borderRadius: '4px', fontSize: '13px' }}
+                        />
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '8px' }}>
+                      <div>
+                        <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Department / Year</label>
+                        <input
+                          type="text"
+                          value={member.dept || ''}
+                          onChange={e => {
+                            const val = e.target.value;
+                            setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, dept: val } : m));
+                          }}
+                          style={{ width: '100%', background: '#111', border: '1px solid #444', color: 'white', padding: '6px', borderRadius: '4px', fontSize: '13px' }}
+                        />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Division</label>
+                        <input
+                          type="text"
+                          value={member.div || ''}
+                          onChange={e => {
+                            const val = e.target.value;
+                            setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, div: val } : m));
+                          }}
+                          style={{ width: '100%', background: '#111', border: '1px solid #444', color: 'white', padding: '6px', borderRadius: '4px', fontSize: '13px' }}
+                        />
+                      </div>
+                    </div>
+
+                    <div style={{ marginBottom: '8px' }}>
+                      <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Photo URL or Path (/assets/team/...)</label>
+                      <input
+                        type="text"
+                        value={member.photo || member.url || ''}
+                        onChange={e => {
+                          const val = e.target.value;
+                          setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, photo: val, url: val } : m));
+                        }}
+                        style={{ width: '100%', background: '#111', border: '1px solid #444', color: '#38bdf8', padding: '6px', borderRadius: '4px', fontSize: '12px' }}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', color: '#888', fontSize: '11px', marginBottom: '2px' }}>Bio / Description</label>
+                      <textarea
+                        rows={2}
+                        value={member.bio || ''}
+                        onChange={e => {
+                          const val = e.target.value;
+                          setFacultyData(prev => prev.map((m, i) => i === idx ? { ...m, bio: val } : m));
+                        }}
+                        style={{ width: '100%', background: '#111', border: '1px solid #444', color: 'white', padding: '6px', borderRadius: '4px', fontSize: '13px', resize: 'vertical' }}
+                      />
+                    </div>
+                  </div>
+                ))}
+
+                <button
+                  onClick={() => {
+                    const newMember = {
+                      role: "FACULTY",
+                      name: "New Member",
+                      dept: "Data Science",
+                      div: "FACULTY",
+                      bio: "Faculty member.",
+                      photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80"
+                    };
+                    setFacultyData(prev => [...prev, newMember]);
+                  }}
+                  style={{
+                    width: '100%', background: '#2563eb', color: 'white', border: 'none', padding: '10px',
+                    borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '14px', marginTop: '4px'
+                  }}
+                >
+                  + Add Faculty Member
+                </button>
+              </div>
+            )}
             {activeTab === 'menu' && menuData && (
               <div>
                 <label style={{ display: 'block', color: '#aaa', fontSize: '12px', marginBottom: '4px' }}>Main Title</label>
@@ -572,7 +707,7 @@ export default function Admin() {
             {activeTab === 'cards' && (
               <div>
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap', background: '#111', padding: '10px', borderRadius: '8px' }}>
-                  {['chapter', 'welcome', 'beginning'].map(sec => (
+                  {['gallery', 'roadmap', 'chapter', 'quest', 'welcome', 'beginning', 'vision', 'foundation', 'journey', 'innovation'].map(sec => (
                     <button 
                       key={sec} 
                       onClick={() => setCardSection(sec)} 

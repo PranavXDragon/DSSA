@@ -100,9 +100,10 @@ def generate_faculty_video():
                     photo_img = ImageOps.fit(p_open, (pw - 20, ph - 70), Image.Resampling.LANCZOS)
             else:
                 target = None
-                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path))]:
+                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path)), os.path.join("assets_raw", os.path.basename(photo_path))]:
                     if os.path.exists(candidate):
                         target = candidate
+                        print(f"Loaded photo for {m.get('name')}: {target}")
                         break
                 if target and os.path.exists(target):
                     p_open = Image.open(target).convert('RGB')
@@ -179,24 +180,30 @@ def generate_faculty_video():
     
     print("Writing H.264 frames to MP4 video using imageio-ffmpeg...")
     try:
-        writer = imageio.get_writer(out_tmp, fps=fps, codec='libx264', quality=8, pixelformat='yuv420p')
+        writer = imageio.get_writer(out_tmp, fps=fps, codec='libx264', quality=5, macro_block_size=8, ffmpeg_params=['-threads', '2', '-preset', 'fast'])
         for slide_idx in range(len(members)):
             curr_slide = slides_np[slide_idx]
             next_slide = slides_np[(slide_idx + 1) % len(members)]
             for _ in range(frames_per_slide - frames_transition):
                 writer.append_data(curr_slide)
+            curr_u16 = curr_slide.astype(np.uint16)
+            next_u16 = next_slide.astype(np.uint16)
             for f in range(frames_transition):
-                alpha = (f + 1) / frames_transition
-                blended = (curr_slide * (1.0 - alpha) + next_slide * alpha).astype(np.uint8)
+                w2 = int(((f + 1) * 256) / frames_transition)
+                w1 = 256 - w2
+                blended = ((curr_u16 * w1 + next_u16 * w2) >> 8).astype(np.uint8)
                 writer.append_data(blended)
+            del curr_u16, next_u16
         writer.close()
         print("Raw MP4 written. Moving to public and dist...")
         if os.path.exists(out_tmp):
             try:
+                import subprocess
                 import imageio_ffmpeg
                 ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
-                ret = os.system(f'"{ffmpeg_exe}" -y -i "{out_tmp}" -c copy -movflags +faststart "{out_public}" >nul 2>&1')
-                if ret != 0:
+                cmd = [ffmpeg_exe, '-y', '-i', out_tmp, '-c', 'copy', '-movflags', '+faststart', out_public]
+                subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if not (os.path.exists(out_public) and os.path.getsize(out_public) > 0):
                     import shutil
                     shutil.copy2(out_tmp, out_public)
             except Exception:
@@ -213,27 +220,28 @@ def generate_faculty_video():
         prefix = "-".join(os.path.basename(out_public).split("-")[:-1])
         import glob
         for old_vid in glob.glob(f"public/media/{prefix}-*.mp4"):
-            if old_vid != out_public:
+            if os.path.abspath(old_vid) != os.path.abspath(out_public):
                 try: os.remove(old_vid)
                 except: pass
         for old_vid in glob.glob(f"dist/media/{prefix}-*.mp4"):
-            if old_vid != out_dist:
+            if os.path.abspath(old_vid) != os.path.abspath(out_dist):
                 try: os.remove(old_vid)
                 except: pass
-            print("Video generated successfully:", out_public)
-            import json
-            for fpath in ["public/assets/data/cms_projects.json", "dist/assets/data/cms_projects.json"]:
-                if os.path.exists(fpath):
-                    with open(fpath, 'r', encoding='utf-8') as f:
-                        pdata = json.load(f)
-                    fl = next((p for p in pdata if p.get('slug') == 'faculty-leadership'), None)
-                    if fl and 'video' in fl:
-                        fl['video']['url'] = f'/media/faculty-leadership-{ts}.mp4?v={ts}'
-                        fl['video']['thumbnail'] = '/media/faculty-leadership-v3.jpg?v=3'
-                        fl['video']['filename'] = f'faculty-leadership-{ts}.mp4'
-                        fl['video']['filesize'] = os.path.getsize(out_public)
-                    with open(fpath, 'w', encoding='utf-8') as f:
-                        json.dump(pdata, f, indent=2)
+
+        print("Video generated successfully:", out_public)
+        import json
+        for fpath in ["public/assets/data/cms_projects.json", "dist/assets/data/cms_projects.json"]:
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    pdata = json.load(f)
+                fl = next((p for p in pdata if p.get('slug') == 'faculty-leadership'), None)
+                if fl and 'video' in fl:
+                    fl['video']['url'] = f'/media/faculty-leadership-{ts}.mp4?v={ts}'
+                    fl['video']['thumbnail'] = '/media/faculty-leadership-v3.jpg?v=3'
+                    fl['video']['filename'] = f'faculty-leadership-{ts}.mp4'
+                    fl['video']['filesize'] = os.path.getsize(out_public)
+                with open(fpath, 'w', encoding='utf-8') as f:
+                    json.dump(pdata, f, indent=2)
     except Exception as e:
         print("Error in faststart/metadata update:", e)
 

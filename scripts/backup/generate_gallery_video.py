@@ -68,20 +68,28 @@ def generate_gallery_video():
                     photo_img = Image.open(cache_file).convert('RGB')
             else:
                 target = None
-                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path)]:
+                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("assets_raw", os.path.basename(photo_path)), os.path.join("public/assets/gallery", os.path.basename(photo_path))]:
                     if os.path.exists(candidate):
                         target = candidate
                         break
                 if target:
+                    print(f"Loaded gallery photo: {target}")
                     photo_img = Image.open(target).convert('RGB')
-        except Exception:
-            pass
+                else:
+                    print(f"Failed to find photo: {photo_path}")
+        except Exception as e:
+            print(f"Exception loading {photo_path}: {e}")
 
         if photo_img:
             photo_img = ImageOps.fit(photo_img, (width, height), Image.Resampling.LANCZOS)
-            overlay = Image.new('RGBA', (width, height), (0, 0, 0, 100))
             base.paste(photo_img, (0, 0))
-            base.paste(overlay, (0, 0), overlay)
+            # Subtle bottom gradient ONLY for text contrast, leaving 75% of the photo 100% bright and clear
+            grad_h = 450
+            grad = Image.new('RGBA', (width, grad_h), (0, 0, 0, 0))
+            for gy in range(grad_h):
+                alpha = int(160 * ((gy / grad_h) ** 1.5))
+                ImageDraw.Draw(grad).line([(0, gy), (width, gy)], fill=(0, 0, 0, alpha))
+            base.paste(grad, (0, height - grad_h), grad)
         else:
             for x in range(0, width, 100):
                 draw.line([(x, 0), (x, height)], fill=(18, 22, 35), width=1)
@@ -97,14 +105,14 @@ def generate_gallery_video():
         bx = 120
         by = height - 300 - (len(wrapped_sub) - 1) * 50
         
+        # Crisp text with drop shadow
+        draw.text((bx + 2, by + 2), title_text.upper(), fill=(0, 0, 0, 200), font=font_title)
         draw.text((bx, by), title_text.upper(), fill=(255, 255, 255), font=font_title)
 
         for line_i, line in enumerate(wrapped_sub):
-            draw.text((bx + 5, by + 120 + line_i * 50), line, fill=(200, 210, 220), font=font_caption)
-
-        c = item.get("color", (0, 255, 170))
-        draw.text((120, 90), "DSSA GALLERY · MEMORIES & MILESTONES", fill=(255, 255, 255), font=font_div)
-        draw.text((width - 300, 90), f"IMAGE {i+1:02d} OF {len(gallery):02d}", fill=c, font=font_div)
+            tx, ty = bx + 5, by + 120 + line_i * 50
+            draw.text((tx + 2, ty + 2), line, fill=(0, 0, 0, 200), font=font_caption)
+            draw.text((tx, ty), line, fill=(235, 245, 255), font=font_caption)
 
         slides_np.append(np.array(base))
         if i == 0:
@@ -119,15 +127,15 @@ def generate_gallery_video():
     
     print("Writing H.264 frames to MP4 video using imageio-ffmpeg...")
     try:
-        writer = imageio.get_writer(out_tmp, fps=fps, codec='libx264', quality=8, pixelformat='yuv420p', macro_block_size=None)
+        writer = imageio.get_writer(out_tmp, fps=fps, codec='libx264', quality=9, pixelformat='yuv420p', macro_block_size=8, ffmpeg_params=['-threads', '2', '-preset', 'medium'])
         for slide_idx in range(len(gallery)):
             curr_slide = slides_np[slide_idx]
             next_slide = slides_np[(slide_idx + 1) % len(gallery)]
             for _ in range(frames_per_slide - frames_transition):
                 writer.append_data(curr_slide)
             for f in range(frames_transition):
-                alpha = (f + 1) / frames_transition
-                blended = (curr_slide.astype(np.float32) * (1.0 - alpha) + next_slide.astype(np.float32) * alpha).astype(np.uint8)
+                alpha = int(((f + 1) / frames_transition) * 256)
+                blended = ((curr_slide.astype(np.uint16) * (256 - alpha) + next_slide.astype(np.uint16) * alpha) >> 8).astype(np.uint8)
                 writer.append_data(blended)
         writer.close()
         
@@ -155,29 +163,29 @@ def generate_gallery_video():
         prefix = "-".join(os.path.basename(out_public).split("-")[:-1])
         import glob
         for old_vid in glob.glob(f"public/media/{prefix}-*.mp4"):
-            if old_vid != out_public:
+            if os.path.normpath(old_vid) != os.path.normpath(out_public):
                 try: os.remove(old_vid)
                 except: pass
         for old_vid in glob.glob(f"dist/media/{prefix}-*.mp4"):
-            if old_vid != out_dist:
+            if os.path.normpath(old_vid) != os.path.normpath(out_dist):
                 try: os.remove(old_vid)
                 except: pass
-            print("Video generated successfully:", out_public)
-            
-            import json
-            for fpath in ['public/assets/data/cms_projects.json', 'dist/assets/data/cms_projects.json']:
-                if os.path.exists(fpath):
-                    with open(fpath, 'r', encoding='utf-8') as f:
-                        pdata = json.load(f)
-                    fl = next((p for p in pdata if p.get('slug') == 'gallery'), None)
-                    if fl and 'video' in fl:
-                        fl['video']['url'] = f'/media/gallery-slideshow-{ts}.mp4?v={ts}'
-                        fl['video']['thumbnail'] = f'/media/gallery-slideshow-thumbnail.jpg?v={ts}'
-                        fl['image'] = f'/media/gallery-slideshow-thumbnail.jpg?v={ts}'
-                        fl['video']['filename'] = f'gallery-slideshow-{ts}.mp4'
-                        fl['video']['filesize'] = os.path.getsize(out_public)
-                    with open(fpath, 'w', encoding='utf-8') as f:
-                        json.dump(pdata, f, indent=2)
+        print("Video generated successfully:", out_public)
+        
+        import json
+        for fpath in ['public/assets/data/cms_projects.json', 'dist/assets/data/cms_projects.json']:
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    pdata = json.load(f)
+                fl = next((p for p in pdata if p.get('slug') == 'gallery'), None)
+                if fl and 'video' in fl:
+                    fl['video']['url'] = f'/media/gallery-slideshow-{ts}.mp4?v={ts}'
+                    fl['video']['thumbnail'] = f'/media/gallery-slideshow-thumbnail.jpg?v={ts}'
+                    fl['image'] = f'/media/gallery-slideshow-thumbnail.jpg?v={ts}'
+                    fl['video']['filename'] = f'gallery-slideshow-{ts}.mp4'
+                    fl['video']['filesize'] = os.path.getsize(out_public)
+                with open(fpath, 'w', encoding='utf-8') as f:
+                    json.dump(pdata, f, indent=2)
     except Exception as e:
         print("Error in faststart/metadata update:", e)
 

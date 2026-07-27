@@ -3682,7 +3682,7 @@ void main() {
     vScale *= mix(1.0, 3.0, vRipple);
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
-    gl_PointSize = (0.035) * DPR * 2.0 * vScale * (1000.0 / length(mvPosition.xyz));
+    gl_PointSize = (0.012) * DPR * 1.2 * vScale * (1000.0 / length(mvPosition.xyz));
     gl_Position = projectionMatrix * mvPosition;
 }
 

@@ -964,7 +964,7 @@
   "INPUT_Config_0_JellyfishDemo_renderOrder": 0,
   "INPUT_Config_0_JellyfishDemo_sortIndex": 0,
   "INPUT_Config_0_LogoParticle_name": "logo",
-  "INPUT_Config_0_LogoParticle_blending": "shader_additive_blending",
+  "INPUT_Config_0_LogoParticle_blending": "shader_normal_blending",
   "INPUT_Config_0_LogoParticle_custom": "Proton",
   "INPUT_Config_0_LogoParticle_renderOrder": 0,
   "INPUT_Config_0_LogoParticle_sortIndex": 0,
@@ -2097,13 +2097,13 @@
   "INPUT_Element_4_Home_text3d_data": "{\"font\":\"NBArchitektStd-Regular\",\"size\":0.28,\"lineHeight\":1.1,\"align\":\"center\",\"color\":\"#7dc2f0\"}",
   "INPUT_Element_4_Home_text3d_fontStyle": "font: NBArchitektStd-Regular\nsize: 0.28\nlineHeight: 1.1\nalign: center\ncolor: #7dc2f0",
   "INPUT_Element_4_Home_text3d_text": "Scroll down",
-  "INPUT_Element_5_WorkDetailContent_text3d_text": "MUSEUM OF WEED",
+  "INPUT_Element_5_WorkDetailContent_text3d_text": " ",
   "INPUT_Element_5_WorkDetailContent_text3d_data": "{\"font\":\"NBArchitektStd-Regular\",\"size\":0.4,\"letterSpacing\":0.05,\"lineHeight\":1.2,\"color\":\"#888888\",\"width\":2.5,\"align\":\"center\"}",
   "INPUT_Element_5_WorkDetailContent_text3d_fontStyle": "font: NBArchitektStd-Regular\nsize: 0.4\nletterSpacing: 0.05\nlineHeight: 1.2\ncolor: #888888\nwidth: 2.5\nalign: center",
   "INPUT_Element_7_WorkDetailContent_text3d_text": "Scroll to close",
   "INPUT_Element_7_WorkDetailContent_text3d_data": "{\"font\":\"NBArchitektStd-Regular\",\"size\":0.07,\"lineHeight\":1.6,\"color\":\"#aaaaaa\",\"width\":2.2,\"align\":\"center\"}",
   "INPUT_Element_7_WorkDetailContent_text3d_fontStyle": "font: NBArchitektStd-Regular\nsize: 0.07\nlineHeight: 1.6\ncolor: #aaaaaa\nwidth: 2.2\nalign: center",
-  "INPUT_Element_8_WorkDetailContent_text3d_text": "2026\nVICE\nINSTALLATION",
+  "INPUT_Element_8_WorkDetailContent_text3d_text": " ",
   "INPUT_Element_8_WorkDetailContent_text3d_data": "{\"font\":\"NBArchitektStd-Regular\",\"size\":0.07,\"lineHeight\":1.6,\"color\":\"#eeeeee\",\"width\":2.8,\"align\":\"right\"}",
   "INPUT_Element_8_WorkDetailContent_text3d_fontStyle": "font: NBArchitektStd-Regular\nsize: 0.07\nlineHeight: 1.6\ncolor: #eeeeee\nwidth: 2.8\nalign: right",
   "INPUT_Element_8_home_scenetlb_conf_transform": "[0,-0.25]",
@@ -3858,9 +3858,9 @@
     0
   ],
   "MESH_Element_5_WorkDetailContentscale": [
-    1,
-    1,
-    1
+    0,
+    0,
+    0
   ],
   "MESH_Element_5_Workposition": [
     0,
@@ -4128,9 +4128,9 @@
     0
   ],
   "MESH_Element_8_WorkDetailContentscale": [
-    1,
-    1,
-    1
+    0,
+    0,
+    0
   ],
   "MESH_Element_8_Workposition": [
     0,
@@ -7160,7 +7160,7 @@
   "UIL_graph_particletest-0": "{\"isOpen\":true,\"isFocused\":true,\"focusedLayer\":\"sl_particleTest_1\",\"order\":[\"Config\",\"sl_particleTest_0\",\"sl_particleTest_1\"]}",
   "UIL_graph_work_scene-0": "{\"isOpen\":true,\"isFocused\":true,\"focusedLayer\":\"sl_work_scene_1\",\"order\":[\"Config\",\"sl_work_scene_0\",\"sl_work_scene_1\"]}",
   "UIL_graph_work_page-0": "{\"isOpen\":true,\"isFocused\":true,\"focusedLayer\":\"sl_work_page_1\",\"order\":[\"Config\",\"sl_work_page_0\",\"sl_work_page_1\",\"sl_work_page_2\",\"sl_work_page_4\",\"sl_work_page_5\",\"sl_work_page_6\"]}",
-  "UnrealBloomComposite/UnrealBloomComposite/cleanroom/bloomStrength": 1,
+  "UnrealBloomComposite/UnrealBloomComposite/cleanroom/bloomStrength": 0.3,
   "UnrealBloomComposite/UnrealBloomComposite/cleanroom/bloomRadius": 1,
   "UnrealBloomComposite/UnrealBloomComposite/cleanroom/bloomTintColor": "#ffffff",
   "UnrealBloomComposite/UnrealBloomComposite/bloomRadius": 1,
@@ -7241,8 +7241,8 @@
   "am_ProtonAntimatterLifecycle_P_Element_0_TubesInteractionuCurlNoiseSpeed": 5,
   "am_ProtonAntimatterLifecycle_P_Element_0_TubesInteractionuCurlTimeScale": 1,
   "am_ProtonAntimatterLifecycle_P_Element_0_TubesInteractionuVelocityStrength": 1,
-  "am_ProtonAntimatter_P_Element_0_LogoParticleuCurlNoiseScale": 1,
-  "am_ProtonAntimatter_P_Element_0_LogoParticleuCurlNoiseSpeed": 2,
+  "am_ProtonAntimatter_P_Element_0_LogoParticleuCurlNoiseScale": 0,
+  "am_ProtonAntimatter_P_Element_0_LogoParticleuCurlNoiseSpeed": 0,
   "am_ProtonAntimatter_P_Element_0_LogoParticleuCurlTimeScale": 0.5,
   "am_ProtonAntimatter_P_Element_0_LogoParticleuMouseStrength": 0.8,
   "am_ProtonAntimatter_P_Element_0_ParticleTestuMouseStrength": 100,

@@ -101,7 +101,7 @@ def generate_achievements_video():
                     photo_img = ImageOps.fit(p_open, (pw - 20, ph - 70), Image.Resampling.LANCZOS)
             else:
                 target = None
-                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path))]:
+                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path)), os.path.join("assets_raw", os.path.basename(photo_path))]:
                     if os.path.exists(candidate):
                         target = candidate
                         break
@@ -236,7 +236,7 @@ def generate_achievements_video():
                         fl['image'] = f'/media/achievements-toppers-v2.jpg?v={ts}'
                         fl['video']['filename'] = f'achievements-toppers-{ts}.mp4'
                         fl['video']['filesize'] = os.path.getsize(out_public)
-                        fl['description'] = "Celebrating Academic Excellence\n& Innovation Champions.\n\nOur University Toppers,\nHackathon Winners,\nand Research Scholars\nrepresent the highest standards\nof DSSA dedication\nand technical mastery."
+                        fl['description'] = ""
                     with open(fpath, 'w', encoding='utf-8') as f:
                         json.dump(pdata, f, indent=2)
     except Exception as e:

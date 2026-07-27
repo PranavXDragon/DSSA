@@ -83,11 +83,15 @@ function saveUilPlugin() {
               };
 
               // Team & Toppers
+              processSection(payload.faculty, 'faculty_leadership_team.json', 'backup/generate_faculty_video.py');
+              processSection(payload.backbone, 'our_backbone_team.json', 'backup/generate_backbone_videos.py');
 
               // New Card Sections
               if (payload.cardsData) {
+                  processSection(payload.cardsData.gallery, 'gallery_images.json', 'backup/generate_gallery_video.py');
+                  processSection(payload.cardsData.roadmap, 'roadmap_events.json', 'backup/generate_roadmap_video.py');
+                  processSection(payload.cardsData.quest, 'quest_events.json', 'backup/generate_quest_video.py');
                   processSection(payload.cardsData.chapter, 'next_chapter.json', 'generate_next_chapter_video.py');
-
                   processSection(payload.cardsData.welcome, 'welcome_dssa.json', 'generate_welcome_video.py');
                   processSection(payload.cardsData.beginning, 'beginning_events.json', 'generate_beginning_video.py');
                   processSection(payload.cardsData.vision, 'our-vision_data.json', 'generate_vision_video.py');

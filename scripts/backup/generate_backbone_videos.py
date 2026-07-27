@@ -88,7 +88,7 @@ def generate_backbone_videos():
                     photo_cache.append(None)
             else:
                 target = None
-                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path))]:
+                for candidate in [photo_path, os.path.join("public", photo_path), os.path.join("dist", photo_path), os.path.join("public/assets/team", os.path.basename(photo_path)), os.path.join("assets_raw", os.path.basename(photo_path))]:
                     if os.path.exists(candidate):
                         target = candidate
                         break
