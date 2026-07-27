@@ -127,7 +127,9 @@ def create_roster():
                 font_init = ImageFont.truetype("C:/Windows/Fonts/bahnschrift.ttf", 40)
             except Exception:
                 font_init = font_title
-            draw.text((px + photo_w//2 - 25, py + photo_h//2 - 25), m["init"], fill=m["color"], font=font_init)
+            
+            init_char = m.get("init", m.get("name", "?")[0].upper())
+            draw.text((px + photo_w//2 - 25, py + photo_h//2 - 25), init_char, fill=m["color"], font=font_init)
 
         # Bottom text details
         ty = cy + 365
@@ -146,7 +148,12 @@ def create_roster():
                     return
 
         draw_truncated(draw, (cx + 16, ty), m.get("role", ""), m["color"], font_role, card_w - 32)
-        draw_truncated(draw, (cx + 16, ty + 30), m.get("name", ""), (255, 255, 255), font_name, card_w - 32)
+        
+        name_txt = m.get("name", "")
+        if len(name_txt) > 23:
+            name_txt = name_txt[:21] + "..."
+            
+        draw_truncated(draw, (cx + 16, ty + 30), name_txt, (255, 255, 255), font_name, card_w - 32)
         draw_truncated(draw, (cx + 16, ty + 70), m.get("dept", ""), (148, 163, 184), font_dept, card_w - 32)
 
         # Decorative line
