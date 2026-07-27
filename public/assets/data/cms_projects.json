@@ -112,7 +112,7 @@
     "name": "OUR VISION",
     "slug": "our-vision",
     "description": "Innovation begins with curiosity.\n\nOur vision is to inspire students\nto explore emerging technologies,\ndevelop leadership,\nstrengthen technical skills,\nand transform ideas\ninto meaningful solutions.\n\nTogether, we learn,\ninnovate, and grow.",
-    "clientName": "Learning • Building • Leading",
+    "clientName": "Learning \u2022 Building \u2022 Leading",
     "completionDate": "2026",
     "projectLogo": "",
     "video": {
@@ -221,7 +221,7 @@
     "slug": "our-journey",
     "description": "Every event adds\na new chapter to our story.\n\nFrom induction programs\nand technical competitions\nto workshops,\ncommunity activities,\nand student achievements,\nDSSA continues to grow\nthrough every experience.",
     "clientName": "Every Milestone Tells a Story.",
-    "completionDate": "2025 → 2026",
+    "completionDate": "2025 \u2192 2026",
     "projectURL": "",
     "projectLogo": "",
     "video": {
@@ -275,7 +275,7 @@
     "slug": "innovation-in-action",
     "description": "Innovation becomes meaningful\nwhen ideas are put into action.\n\nThrough coding,\ntechnical workshops,\ncreative competitions,\nresearch,\nand collaborative projects,\nstudents transform knowledge\ninto real-world solutions",
     "clientName": "Turning Ideas into Impact.",
-    "completionDate": "2025 → Present",
+    "completionDate": "2025 \u2192 Present",
     "projectLogo": "",
     "video": {
       "id": "65b8850bcce4b7a6989f1a94",
@@ -329,7 +329,7 @@
     "slug": "innovator-quest",
     "description": "Learning becomes unforgettable\nwhen it is experienced.\n\nTechnical events,\ncoding competitions,\nseminars,\nworkshops,\ninnovation challenges,\nand student activities\nbring the DSSA community together..",
     "clientName": "Celebrating Technology Through Experience.",
-    "completionDate": "Academic Year 2025–26",
+    "completionDate": "Academic Year 2025\u201326",
     "video": {
       "id": "65a8d1f0cf624f70f8fff072",
       "thumbnail": "/media/quest-slideshow-thumbnail.jpg?v=1785094059",
@@ -383,7 +383,7 @@
     "slug": "achievements",
     "description": "Celebrating Academic Excellence\n& Innovation Champions.\n\nOur University Toppers,\nHackathon Winners,\nand Research Scholars\nrepresent the highest standards\nof DSSA dedication\nand technical mastery.",
     "clientName": "Every Success Inspires the Next.",
-    "completionDate": "2025–2026",
+    "completionDate": "2025\u20132026",
     "projectURL": "",
     "projectLogo": "",
     "video": {
@@ -437,7 +437,7 @@
     "slug": "gallery",
     "description": "Every photograph\ncaptures a memory.\n\nFrom workshops\nand competitions\nto celebrations,\nstudent activities,\nand unforgettable moments,\nour gallery reflects\nthe journey of DSSA.",
     "clientName": "Moments That Define Our Journey.",
-    "completionDate": "2025–2026",
+    "completionDate": "2025\u20132026",
     "projectLogo": "",
     "video": {
       "id": "65a89d26cf624f70f8ffee17",
@@ -491,7 +491,7 @@
     "slug": "faculty-leadership",
     "description": "Every successful forum\nis guided by inspiring mentors.\n\nThe continuous support\nof our Principal,\nHOD,\nForum In-Charge,\nand faculty members\nempowers students\nto learn,\ninnovate,\nand achieve more.",
     "clientName": "Guided by Experience.",
-    "completionDate": "Academic Session 2025–26",
+    "completionDate": "Academic Session 2025\u201326",
     "projectURL": "",
     "projectLogo": "",
     "video": {
@@ -544,13 +544,13 @@
     "slug": "core-committee",
     "description": "Behind every successful event\nis a dedicated team.\n\nThe Executive Committee\nworks together\nto organize activities,\nencourage participation,\nand transform ideas\ninto memorable experiences\nfor every student.",
     "clientName": "The People Behind the Vision.",
-    "completionDate": "Committee 2025–26",
+    "completionDate": "Committee 2025\u201326",
     "projectLogo": "",
     "video": {
       "id": "65a89ad9cf624f70f8ffeda8",
       "thumbnail": "/media/core-committee-v2.jpg",
       "prefix": "media",
-      "filename": "core-committee-roster-1785087908.mp4",
+      "filename": "core-committee-roster-1785120805.mp4",
       "mimeType": "video/mp4",
       "filesize": 9684213,
       "sizes": {
@@ -581,7 +581,7 @@
       },
       "createdAt": "2024-01-18T03:28:25.349Z",
       "updatedAt": "2024-01-18T03:28:25.349Z",
-      "url": "/media/core-committee-roster-1785087109.mp4?v=1785087109"
+      "url": "/media/core-committee-roster-1785120805.mp4"
     },
     "uiColor": "ffa147",
     "tags": "Leadership",
@@ -650,7 +650,7 @@
     "slug": "annual-roadmap",
     "description": "Every academic year\nbrings new opportunities.\n\nWith workshops,\ncoding activities,\ntechnical competitions,\nindustry interactions,\nand collaborative initiatives,\nDSSA continues\nits journey of innovation\nand continuous learning.",
     "clientName": "Looking Ahead.",
-    "completionDate": "2026 → 2027",
+    "completionDate": "2026 \u2192 2027",
     "projectLogo": "",
     "video": {
       "id": "65a899f6cf624f70f8ffed78",
